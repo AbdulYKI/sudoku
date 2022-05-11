@@ -1,0 +1,51 @@
+.grid {
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  max-width: 500px;
+}
+.row-height {
+  height: 55px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008bba3a;
+}
+
+.col {
+  position: relative;
+  cursor: pointer;
+}
+.col:hover {
+  .overlay {
+    opacity: 1;
+  }
+  .value {
+    font-weight: bold;
+    z-index: 999;
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.value {
+  font-weight: 300;
+  z-index: 1;
+  color: black;
+  font-size: 15px;
+  transform: 0.5s ease;
+}
+@media only screen and (max-width: 600px) {
+  .row-height {
+    height: 45px;
+  }
+}

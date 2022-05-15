@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+$primary-button: #99ffcd;
+$success-button: #fff89a;
+.btn-primary {
+  @include button-variant(
+    $primary-button,
+    darken($primary-button, 7.5%),
+    color-contrast($primary-button),
+    lighten($primary-button, 5%),
+    lighten($primary-button, 10%),
+    color-contrast($primary-button)
+  );
+}
+
+.btn-success {
+  @include button-variant(
+    $success-button,
+    darken($success-button, 7.5%),
+    color-contrast($success-button),
+    lighten($success-button, 5%),
+    lighten($success-button, 10%),
+    color-contrast($success-button)
+  );
+}
+@font-face {
+  font-family: "kufi";
+  src: url("../src/assets/ReemKufiInk-Bold.ttf") format("truetype");
+}
+body {
+  font-family: "kufi", serif;
+  background-color: #fffdde;
+}

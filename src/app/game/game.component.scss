@@ -1,0 +1,74 @@
+$cell-font-size: 20px;
+$green: #96ceb4;
+$yellow: #ffeead;
+$red: #d9534f;
+$orange: #ffad60;
+.grid {
+  max-width: 700px;
+}
+.cell {
+  position: relative;
+  padding-top: 100%;
+  &:not(.locked):hover {
+    background-color: lighten($green, 7%);
+    .cell-content {
+      left: calc(50% - 12px);
+      top: calc(50% - 32px);
+      font-size: $cell-font-size * 2;
+      color: $yellow;
+    }
+  }
+  transition: all 0.5s ease;
+  cursor: pointer;
+  background-color: $green;
+}
+.border-color-override {
+  border-color: $yellow !important;
+}
+.cell-content {
+  position: absolute;
+  font-size: $cell-font-size;
+  color: $yellow;
+  left: calc(50% - 8px);
+  top: calc(50% - 15px);
+  transition: all 0.5s ease;
+}
+.top-bold-border {
+  border-top: 4px solid !important;
+  color: $yellow;
+}
+.bottom-bold-border {
+  border-bottom: 4px solid !important;
+  color: $yellow;
+}
+
+.left-bold-border {
+  border-left: 4px solid !important;
+  color: $yellow;
+}
+
+.right-bold-border {
+  border-right: 4px solid !important;
+  color: $yellow;
+}
+
+.wrong {
+  .cell-content {
+    color: $orange;
+  }
+  &:hover {
+    background-color: lighten($red, 7%) !important;
+    .cell-content {
+      color: $orange !important;
+    }
+  }
+  background-color: $red;
+}
+
+.locked {
+  cursor: unset;
+}
+
+.sudoku {
+  font-size: 50px;
+}

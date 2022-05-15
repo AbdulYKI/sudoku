@@ -1,0 +1,32 @@
+$font-color: #beaee2;
+$cell-font-size: 25px;
+$background-color: #f9f9f9;
+.grid {
+  max-width: 250px;
+}
+.cell {
+  position: relative;
+  padding-top: 100%;
+  &:hover {
+    .cell-content {
+      left: calc(50% - $cell-font-size * 0.5);
+      top: calc(50% - $cell-font-size * 1.5);
+      font-size: $cell-font-size * 2;
+    }
+  }
+  transition: all 0.5s ease;
+  cursor: pointer;
+  background-color: $background-color;
+}
+
+.cell-content {
+  position: absolute;
+  font-size: $cell-font-size;
+  color: $font-color;
+  left: calc(50% - $cell-font-size * 0.5);
+  top: calc(50% - $cell-font-size * 0.5);
+  transition: all 0.5s ease;
+}
+.border-color-override {
+  border-color: $font-color !important;
+}

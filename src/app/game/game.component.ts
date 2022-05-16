@@ -44,6 +44,7 @@ export class GameComponent implements OnInit {
 
     this.locked[0][0] = true;
     //copy array
+    this.currentSheetValues = JSON.parse(JSON.stringify(this.firstSheetValues));
     this.values = JSON.parse(JSON.stringify(this.firstSheetValues));
   }
   openModal(rowIdx: number, colIdx: number) {

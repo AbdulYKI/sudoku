@@ -42,10 +42,9 @@ export class GameComponent implements OnInit {
       this.wrong[index] = new Array(9);
     });
 
-    this.locked[0][0] = true;
+  
     //copy array
-    this.currentSheetValues = JSON.parse(JSON.stringify(this.firstSheetValues));
-    this.values = JSON.parse(JSON.stringify(this.firstSheetValues));
+    this.setSheet(1);
   }
   openModal(rowIdx: number, colIdx: number) {
     this.modalService
@@ -70,6 +69,7 @@ export class GameComponent implements OnInit {
     }
     this.resetWrongFlags();
     this.values = JSON.parse(JSON.stringify(this.currentSheetValues));
+    this.locked = JSON.parse(JSON.stringify(this.currentSheetValues));
   }
   checkCorrectness(rowIdx: number, colIdx: number) {
     var result =
